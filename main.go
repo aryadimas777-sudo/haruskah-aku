@@ -2,6 +2,8 @@ package main
 
 import (
 	"haruskah-aku/handlers"
+	"haruskah-aku/repositories"
+	"haruskah-aku/services"
 	"math/rand"
 	"time"
 
@@ -14,7 +16,11 @@ func main() {
 
 	r := gin.Default()
 
-	r.GET("/tanya", handlers.GetJawaban)
+	repo := &repositories.JawabanRepository{}
+	service := services.NewJawabanService(repo)
+	handler := handlers.NewJawabanHandler(service)
+
+	r.GET("/tanya", handler.GetJawaban)
 
 	r.GET("/tanya-pasti", handlers.GetJawabPasti)
 
