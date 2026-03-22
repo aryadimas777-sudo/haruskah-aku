@@ -1,6 +1,9 @@
 package services
 
-import "math/rand"
+import (
+	"haruskah-aku/repostiories"
+	"math/rand"
+)
 
 type Response struct {
 	Jawaban string
@@ -9,13 +12,13 @@ type Response struct {
 // function random jawaban
 func Jawab() Response {
 	// list pilihan
-	jawaban := []string{"ya", "tidak", "mungkin"}
+	list := repostiories.GetJawabanList()
 
 	// random index -> ambil angka random dari 0 sampai panjang slice - 1
-	index := rand.Intn(len(jawaban))
+	index := rand.Intn(len(list))
 
 	return Response{
-		Jawaban: jawaban[index],
+		Jawaban: list[index],
 	}
 }
 
