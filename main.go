@@ -6,20 +6,28 @@ import (
 	"time"
 )
 
+type Response struct {
+	Jawaban string
+}
+
 // function random jawaban
-func Jawab() string {
+func Jawab() Response {
 	// list pilihan
-	jawaban := []string{"ya", "tidak"}
+	jawaban := []string{"ya", "tidak", "mungkin"}
 
 	// random index -> ambil angka random dari 0 sampai panjang slice - 1
 	index := rand.Intn(len(jawaban))
 
-	return jawaban[index]
+	return Response{
+		Jawaban: jawaban[index],
+	}
 }
 
 func main() {
 	// biar random beda tiap run
 	rand.Seed(time.Now().UnixNano())
 
-	fmt.Println("jawaban:", Jawab())
+	result := Jawab()
+
+	fmt.Println("jawaban:", result)
 }
