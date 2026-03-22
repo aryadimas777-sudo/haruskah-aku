@@ -1,17 +1,20 @@
 package main
 
 import (
-	"fmt"
-	"haruskah-aku/services"
+	"haruskah-aku/handlers"
 	"math/rand"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	// biar random beda tiap run
 	rand.Seed(time.Now().UnixNano())
 
-	result := services.Jawab()
+	r := gin.Default()
 
-	fmt.Println("jawaban:", result.Jawaban)
+	r.GET("/tanya", handlers.GetJawaban)
+
+	r.Run()
 }
