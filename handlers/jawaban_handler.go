@@ -12,3 +12,9 @@ func GetJawaban(c *gin.Context) {
 
 	c.JSON(http.StatusOK, result)
 }
+
+func GetJawabPasti(c *gin.Context) {
+	result := services.JawabPasti()
+
+	c.JSON(http.StatusOK, result)
+}

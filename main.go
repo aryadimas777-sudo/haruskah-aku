@@ -16,5 +16,7 @@ func main() {
 
 	r.GET("/tanya", handlers.GetJawaban)
 
+	r.GET("/tanya-pasti", handlers.GetJawabPasti)
+
 	r.Run()
 }

@@ -18,3 +18,7 @@ func Jawab() Response {
 		Jawaban: jawaban[index],
 	}
 }
+
+func JawabPasti() Response {
+	return Response{Jawaban: "ya"}
+}
