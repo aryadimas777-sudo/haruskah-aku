@@ -21,8 +21,8 @@ func (h *JawabanHandler) GetJawaban(c *gin.Context) {
 	c.JSON(http.StatusOK, result)
 }
 
-func GetJawabPasti(c *gin.Context) {
-	result := services.JawabPasti()
+func (h *JawabanHandler) GetJawabPasti(c *gin.Context) {
+	result := h.service.JawabPasti()
 
 	c.JSON(http.StatusOK, result)
 }

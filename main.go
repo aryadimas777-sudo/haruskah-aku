@@ -3,6 +3,7 @@ package main
 import (
 	"haruskah-aku/handlers"
 	"haruskah-aku/repositories"
+	"haruskah-aku/routes"
 	"haruskah-aku/services"
 	"math/rand"
 	"time"
@@ -20,9 +21,8 @@ func main() {
 	service := services.NewJawabanService(repo)
 	handler := handlers.NewJawabanHandler(service)
 
-	r.GET("/tanya", handler.GetJawaban)
-
-	r.GET("/tanya-pasti", handlers.GetJawabPasti)
+	// pindahin ke routes
+	routes.SetupRoutes(r, handler)
 
 	r.Run()
 }

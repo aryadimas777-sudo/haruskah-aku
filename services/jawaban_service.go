@@ -30,6 +30,6 @@ func (s *JawabanService) Jawab() Response {
 	}
 }
 
-func JawabPasti() Response {
+func (s *JawabanService) JawabPasti() Response {
 	return Response{Jawaban: "ya"}
 }
