@@ -22,7 +22,7 @@ func main() {
 	handler := handlers.NewJawabanHandler(service)
 
 	// pindahin ke routes
-	routes.SetupRoutes(r, handler)
+	routes.JawabanRoutes(r, handler)
 
 	r.Run()
 }
