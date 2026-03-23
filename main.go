@@ -21,8 +21,7 @@ func main() {
 	service := services.NewJawabanService(repo)
 	handler := handlers.NewJawabanHandler(service)
 
-	// pindahin ke routes
-	routes.JawabanRoutes(r, handler)
+	routes.SetupRoutes(r, handler)
 
 	r.Run()
 }

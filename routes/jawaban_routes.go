@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func JawabanRoutes(r *gin.Engine, handler *handlers.JawabanHandler) {
-	r.GET("tanya", handler.GetJawaban)
-	r.GET("/tanya-pasti", handler.GetJawabPasti)
+func JawabanRoutes(r *gin.Engine, h *handlers.JawabanHandler) {
+	r.GET("tanya", h.GetJawaban)
+	r.GET("/tanya-pasti", h.GetJawabPasti)
 }
